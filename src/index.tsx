@@ -28,6 +28,7 @@ export interface Props {
   };
   inline?: boolean;
   debounce?: number;
+  isDropdownVisible?: boolean;
 }
 
 interface Components {
@@ -121,6 +122,7 @@ function AddressSearch(props: Props): JSX.Element {
     components,
     inline,
     debounce,
+    isDropdownVisible,
   } = props;
   const loqate = useMemo(() => Loqate.create(apiKey), [apiKey]);
 
@@ -206,7 +208,7 @@ function AddressSearch(props: Props): JSX.Element {
               left: rect?.left ?? 0,
               width: rect?.width ?? undefined,
             }}
-            hidden={!suggestions.length}
+            hidden={!isDropdownVisible}
             className={classes?.list}
             data-testid="react-loqate-list"
           >
