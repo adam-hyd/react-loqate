@@ -198,7 +198,7 @@ function AddressSearch(props: Props): JSX.Element {
       />
 
       <Portal container={document.body} disablePortal={inline}>
-        <ClickAwayListener onClickAway={() => setSuggestions([])}>
+        <ClickAwayListener onClickAway={() => {}}>
           <List
             style={{
               position: 'absolute',
